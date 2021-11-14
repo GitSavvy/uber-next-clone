@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/dist/client/router'
 import tw from "tailwind-styled-components"
 import mapboxgl from 'mapbox-gl'
 import  {useEffect}  from 'react'
@@ -23,17 +22,19 @@ const Map = (props) => {
         //addToMap(map);
         console.log('pickUpCoordinates:',props.pickUpCoordinates)
         console.log('dropOffCoordinates:',props.dropOffCoordinates)
-
+       
         if(props.pickUpCoordinates && props.dropOffCoordinates){
-          map.fitBounds(
-            [props.pickUpCoordinates,props.dropOffCoordinates],{ padding:60}
+          map.fitBounds([
+            props.pickUpCoordinates,
+            props.dropOffCoordinates
 
+          ],{ padding:180}
+          
+          
+          )
 
-  );
-  }
-        if(props.pickUpCoordinates){
           addToMap(map,props.pickUpCoordinates)
-  }
+        }
         if(props.dropOffCoordinates){
           addToMap(map,props.dropOffCoordinates)
         }

@@ -49,8 +49,8 @@ console.log('dropSearch',dropSearch)
                 pathname:'/confirm',
                 query:
                 {
-                    pickUpSearch:pickUpSearch,
-                    dropSearch:dropSearch
+                    pickUp:pickUpSearch,
+                dropOff:dropSearch
                 }
                             }}>
             <ConfirmButton>Confirm Locations</ConfirmButton>

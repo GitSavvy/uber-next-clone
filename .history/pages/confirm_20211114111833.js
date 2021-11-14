@@ -66,18 +66,7 @@ const Confirm = () => {
             pickUpCoordinates={pickUpCoordinates}
             dropOffCoordinates={dropOffCoordinates}
             />
-            <RideContainer>
-                <RideSelector>
-                    Ride Selector
-                    <ConfirmButtonContainer>
-                    Confirm Uber X
-                    </ConfirmButtonContainer>
-
-                </RideSelector>
-
-
-
-            </RideContainer>
+            <RideContainer> ride Selector Confirm button</RideContainer>
         </Wrapper>
     )
 }
@@ -86,5 +75,3 @@ export default Confirm
 
 const Wrapper=tw.div`flex h-screen flex-col`
 const RideContainer=tw.div`flex-1 `
-const RideSelector=tw.div``
-const ConfirmButtonContainer=tw.div``

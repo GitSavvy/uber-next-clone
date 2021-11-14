@@ -23,13 +23,17 @@ const Map = (props) => {
         //addToMap(map);
         console.log('pickUpCoordinates:',props.pickUpCoordinates)
         console.log('dropOffCoordinates:',props.dropOffCoordinates)
-
+       
         if(props.pickUpCoordinates && props.dropOffCoordinates){
-          map.fitBounds(
-            [props.pickUpCoordinates,props.dropOffCoordinates],{ padding:60}
+          map.fitBounds([
+            props.pickUpCoordinates,
+            props.dropOffCoordinates
+
+          ],{ padding:60}
 
 
   );
+  //addToMap(map,props.pickUpCoordinates)
   }
         if(props.pickUpCoordinates){
           addToMap(map,props.pickUpCoordinates)

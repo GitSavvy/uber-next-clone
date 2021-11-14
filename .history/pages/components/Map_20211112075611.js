@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/dist/client/router'
 import tw from "tailwind-styled-components"
 import mapboxgl from 'mapbox-gl'
 import  {useEffect}  from 'react'
@@ -9,7 +8,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2F2dnkyMSIsImEiOiJja3ZwMGMxenQxb2p5MnhvdXo4d
 
 
 const Map = (props) => {
-  console.log('props are -->',props)
+ // console.log('props are -->',props)
 
     useEffect(() => {
       const  map = new mapboxgl.Map({
@@ -19,26 +18,23 @@ const Map = (props) => {
         center: [78.476681027237, 22.1991660760527],
         zoom: 3
         })
-      //  console.log('props are -->',props)
-        //addToMap(map);
+
+        addToMap(map);
+        console.log('props:',props)
+
         console.log('pickUpCoordinates:',props.pickUpCoordinates)
         console.log('dropOffCoordinates:',props.dropOffCoordinates)
-
-        if(props.pickUpCoordinates && props.dropOffCoordinates){
-          map.fitBounds(
-            [props.pickUpCoordinates,props.dropOffCoordinates],{ padding:60}
-
-
-  );
-  }
+       
         if(props.pickUpCoordinates){
           addToMap(map,props.pickUpCoordinates)
-  }
+        }
         if(props.dropOffCoordinates){
           addToMap(map,props.dropOffCoordinates)
         }
 
-        } , [props.pickUpCoordinates,props.dropOffCoordinates]
+         } 
+       , [props.pickUpCoordinates,props.dropOffCoordinates]
+        
         );
 
 const addToMap= (map,coordinates) => {

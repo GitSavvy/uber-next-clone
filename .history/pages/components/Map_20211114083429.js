@@ -30,6 +30,7 @@ const Map = (props) => {
 
 
   );
+  //addToMap(map,props.pickUpCoordinates)
   }
         if(props.pickUpCoordinates){
           addToMap(map,props.pickUpCoordinates)

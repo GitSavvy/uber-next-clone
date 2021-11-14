@@ -1,17 +1,9 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
 import Link from 'next/link'
-import { useState } from 'react'
 
 
 const Search = () => {
-
-    const [pickUpSearch,setPickUpSearch]= useState('')
-    const [dropSearch,setDropSearch]= useState('')
-console.log('pickUpSearch',pickUpSearch)
-console.log('dropSearch',dropSearch)
-
-
     return (
         <Wrapper>
 
@@ -19,7 +11,7 @@ console.log('dropSearch',dropSearch)
             <Link href='/'>
             <ButtonContainer>
                 <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
-            </ButtonContainer>
+            </ButtonContainer> 
             </Link>
             <InputContainer>
             <FromToIcons>
@@ -29,11 +21,9 @@ console.log('dropSearch',dropSearch)
 
             <Square src='https://img.icons8.com/windows/50/000000/square-full.png' />
             </FromToIcons>
-
-
             <InputBoxes>
-                <Input placeholder='Enter Pick up Location' value={pickUpSearch} onChange={(e)=> setPickUpSearch(e.target.value)}></Input>
-                <Input placeholder='Where To ?'             value={dropSearch}   onChange={(e)=> setDropSearch(e.target.value)}></Input>
+                <Input placeholder='Enter Pick up Location'></Input>
+                <Input placeholder='Where To ?'></Input>
 
             </InputBoxes>
 
@@ -42,19 +32,15 @@ console.log('dropSearch',dropSearch)
             </InputContainer>
 
             <SavedPlaces>
+
             <StarIcon src='https://img.icons8.com/ios-filled/50/ffffff/star--v1.png' />
             Saved Places
             </SavedPlaces>
-                <Link href={{
-                pathname:'/confirm',
-                query:
-                {
-                    pickUpSearch:pickUpSearch,
-                    dropSearch:dropSearch
-                }
-                            }}>
-            <ConfirmButton>Confirm Locations</ConfirmButton>
-            </Link>
+
+         <Link href='/confirm'>
+         <ConfirmButton>Confirm Locations</ConfirmButton> 
+         </Link>
+
 
 
         </Wrapper>

@@ -9,7 +9,6 @@ const Search = () => {
     const [pickUpSearch,setPickUpSearch]= useState('')
     const [dropSearch,setDropSearch]= useState('')
 console.log('pickUpSearch',pickUpSearch)
-console.log('dropSearch',dropSearch)
 
 
     return (
@@ -29,12 +28,13 @@ console.log('dropSearch',dropSearch)
 
             <Square src='https://img.icons8.com/windows/50/000000/square-full.png' />
             </FromToIcons>
-
-
             <InputBoxes>
+
+
+
                 <Input placeholder='Enter Pick up Location' value={pickUpSearch} onChange={(e)=> setPickUpSearch(e.target.value)}></Input>
                 <Input placeholder='Where To ?'             value={dropSearch}   onChange={(e)=> setDropSearch(e.target.value)}></Input>
-
+            
             </InputBoxes>
 
             <PlusIcon src='https://img.icons8.com/ios/50/000000/plus-math.png' />
@@ -42,16 +42,15 @@ console.log('dropSearch',dropSearch)
             </InputContainer>
 
             <SavedPlaces>
+            
             <StarIcon src='https://img.icons8.com/ios-filled/50/ffffff/star--v1.png' />
             Saved Places
             </SavedPlaces>
                 <Link href={{
                 pathname:'/confirm',
                 query:
-                {
-                    pickUpSearch:pickUpSearch,
-                    dropSearch:dropSearch
-                }
+                {pickUp:setPickUpSearch,
+                dropOff:setDropSearch}
                             }}>
             <ConfirmButton>Confirm Locations</ConfirmButton>
             </Link>

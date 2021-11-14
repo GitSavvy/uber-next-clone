@@ -48,10 +48,8 @@ console.log('dropSearch',dropSearch)
                 <Link href={{
                 pathname:'/confirm',
                 query:
-                {
-                    pickUpSearch:pickUpSearch,
-                    dropSearch:dropSearch
-                }
+                {pickUp:'pickUpSearch',
+                dropOff:'dropSearch'}
                             }}>
             <ConfirmButton>Confirm Locations</ConfirmButton>
             </Link>

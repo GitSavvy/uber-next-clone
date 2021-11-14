@@ -9,7 +9,7 @@ const Search = () => {
     const [pickUpSearch,setPickUpSearch]= useState('')
     const [dropSearch,setDropSearch]= useState('')
 console.log('pickUpSearch',pickUpSearch)
-console.log('dropSearch',dropSearch)
+console.log('dropSearch',setDropSearch)
 
 
     return (
@@ -48,10 +48,8 @@ console.log('dropSearch',dropSearch)
                 <Link href={{
                 pathname:'/confirm',
                 query:
-                {
-                    pickUpSearch:pickUpSearch,
-                    dropSearch:dropSearch
-                }
+                {pickUp:'pickUpSearch',
+                dropOff:'dropSearch'}
                             }}>
             <ConfirmButton>Confirm Locations</ConfirmButton>
             </Link>
